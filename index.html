@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigo Academy</title>
-    <meta name="description" content="Language training and psychology education programs.">
+    <meta name="description" content="Language training, psychology education, and Vedic Jyotish programs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -20,6 +20,9 @@
             --cream-text: #F0F4E8;
             --charcoal: #1E3A2F;
             --psychology-blue: #4A6FA5;
+            --jyotish-purple: #5A189A;
+            --link-color: #7EC8E3;
+            --link-hover: #9BE7FF;
             --shadow: 0 12px 40px rgba(0,0,0,0.4);
             --shadow-hover: 0 20px 60px rgba(0,0,0,0.45);
         }
@@ -134,7 +137,7 @@
             opacity: 0.95;
         }
 
-        /* DIVISIONS GRID */
+        /* DIVISIONS GRID - Now 3 columns */
         .divisions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -177,6 +180,10 @@
             background: linear-gradient(135deg, var(--psychology-blue), #2C5282);
         }
 
+        .jyotish-division .division-header {
+            background: linear-gradient(135deg, var(--jyotish-purple), #7B2CBF);
+        }
+
         .division-icon {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
@@ -211,6 +218,12 @@
             background: rgba(74, 111, 165, 0.2);
             color: #6B8CBC;
             border: 1px solid rgba(74, 111, 165, 0.3);
+        }
+
+        .jyotish-division .division-badge {
+            background: rgba(90, 24, 154, 0.2);
+            color: #9D4EDD;
+            border: 1px solid rgba(90, 24, 154, 0.3);
         }
 
         .program-list {
@@ -259,8 +272,34 @@
             color: white;
         }
 
+        .btn-jyotish {
+            background: linear-gradient(135deg, var(--jyotish-purple), #9D4EDD);
+            color: white;
+        }
+
         .btn:hover {
             transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* SPECIAL LINKS IN DIVISIONS */
+        .special-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--gold-light);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(244, 196, 48, 0.3);
+        }
+
+        .special-link:hover {
+            background: rgba(244, 196, 48, 0.2);
+            color: var(--gold-primary);
+            transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
 
@@ -287,6 +326,74 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             line-height: 1.8;
+        }
+
+        /* JYOTISH SECTION - Enhanced from Alma Clara */
+        .jyotish-section {
+            padding: 5rem 0;
+            background: rgba(90, 24, 154, 0.1);
+            border-top: 1px solid rgba(90, 24, 154, 0.3);
+            border-bottom: 1px solid rgba(90, 24, 154, 0.3);
+        }
+
+        .jyotish-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(126, 200, 227, 0.3);
+            box-shadow: var(--shadow);
+        }
+
+        .jyotish-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-align: center;
+            color: var(--gold-primary);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .jyotish-logo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--gold-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .jyotish-content {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--cream-text);
+        }
+
+        .jyotish-content a {
+            color: var(--link-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .jyotish-content a:hover {
+            color: var(--link-hover);
+            border-bottom: 1px solid var(--link-color);
+            text-shadow: 0 0 8px rgba(126, 200, 227, 0.3);
+        }
+
+        .jyotish-disclaimer {
+            margin-top: 2.5rem;
+            font-style: italic;
+            color: var(--gold-light);
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-left: 4px solid var(--gold-primary);
         }
 
         /* LEADERSHIP SECTION */
@@ -465,19 +572,34 @@
             text-align: center;
         }
 
+        footer a {
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--link-color);
+            text-decoration: underline;
+            text-shadow: 0 0 8px rgba(126, 200, 227, 0.3);
+        }
+
         @media (max-width: 768px) {
             .header-content { flex-direction: column; text-align: center; }
             nav ul { justify-content: center; }
             .divisions-grid { grid-template-columns: 1fr; }
-            .leadership-card { padding: 2rem; }
+            .leadership-card, .jyotish-container { padding: 2rem; }
             .cofounder-name { font-size: 2rem; }
             .about-content h2, .leadership-section h2, .cta-section h2 { font-size: 2.5rem; }
+            .jyotish-logo { font-size: 2.8rem; }
         }
 
         @media (max-width: 480px) {
             .division-card { margin: 0 10px; }
             .btn { padding: 0.8rem 1.8rem; font-size: 1rem; }
             .cofounder-avatar { width: 120px; height: 120px; font-size: 2.5rem; }
+            .jyotish-container { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -490,6 +612,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#divisions">Programs</a></li>
+                        <li><a href="#jyotish">Vedic Insights</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#leadership">Leadership</a></li>
                     </ul>
@@ -501,8 +624,7 @@
     <section id="home" class="hero">
         <div class="container">
             <h1>Amigo Academy</h1>
-            <p class="hero-subtitle">Language training and psychology education programs designed for academic excellence and personal growth</p>
-            <a href="#divisions" class="btn btn-language">Explore Our Programs</a>
+            <p class="hero-subtitle">Language training, psychology education, and Vedic wisdom programs designed for holistic growth</p>
         </div>
     </section>
 
@@ -525,6 +647,14 @@
                         <li><i class="fas fa-user-tie"></i> <strong>Interview Preparation</strong> - Career-focused language training</li>
                         <li><i class="fas fa-comments"></i> <strong>Conversational English</strong> - Fluency and confidence building</li>
                     </ul>
+                    
+                    <!-- Alma Clara Link Added Here -->
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <p style="font-style: italic; margin-bottom: 1rem;">Explore our contemplative language learning approach:</p>
+                        <a href="http://almaclara.org/" class="special-link" target="_blank" aria-label="Visit Alma Clara">
+                            <i class="fas fa-heart"></i> Visit Alma Clara - Language & Self-Understanding
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -543,8 +673,50 @@
                         <li><i class="fas fa-wheelchair"></i> <strong>Disability Studies</strong> - Rights, awareness & inclusion</li>
                         <li><i class="fas fa-search"></i> <strong>Research Methodology</strong> - Social sciences research training</li>
                         <li><i class="fas fa-heart"></i> <strong>Mental Health Literacy</strong> - Educational workshops</li>
-                      
                     </ul>
+                </div>
+            </div>
+
+            <!-- JYOTISH DIVISION -->
+            <div class="division-card jyotish-division">
+                <div class="division-header">
+                    <div class="division-icon">🌞</div>
+                    <div class="division-title">Vedic Jyotish</div>
+                    <p>The science of light & self-understanding</p>
+                </div>
+                <div class="division-content">
+                    <span class="division-badge">Contemplative Learning</span>
+                    <h3>Vedic Wisdom Programs</h3>
+                    <ul class="program-list">
+                        <li><i class="fas fa-star"></i> <strong>Jyotish Fundamentals</strong> - Introduction to Vedic astrology</li>
+                        <li><i class="fas fa-book-open"></i> <strong>Planetary Studies</strong> - Grahas, Rashis & Nakshatras</li>
+                        <li><i class="fas fa-user-ninja"></i> <strong>Self-Discovery</strong> - Personal chart contemplation</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Jyotish Section from Alma Clara -->
+    <section id="jyotish" class="jyotish-section">
+        <div class="container">
+            <div class="jyotish-container">
+                <div class="jyotish-logo">Joy of Jyotish</div>
+                <h2 class="jyotish-title">Vedic Insights</h2>
+                <div class="jyotish-content">
+                    <p>Discover Vedic Jyotish – the ancient science of light – through <strong>Joy of Jyotish</strong>.</p>
+                    <p>This dedicated platform offers contemplative resources for beginners, revealing the inner language of soul, destiny, and self-understanding through timeless Vedic wisdom. Explore how planetary patterns can illuminate your personal journey and psychological makeup.</p>
+                    <p>At Amigo Academy, we integrate this ancient knowledge with modern psychology to provide a holistic approach to self-discovery and personal growth.</p>
+                    
+                    <div class="jyotish-disclaimer">
+                        <p><strong>Purely Educational Focus</strong> – No readings, predictions, or consultations offered.</p>
+                    </div>
+                    
+                    <!-- Jyotish Link Button Added Back -->
+                    <a href="https://joyofjyotish.github.io" class="btn btn-jyotish" target="_blank" aria-label="Visit Joy of Jyotish" style="margin-top: 2rem;">
+                        <i class="fas fa-external-link-alt"></i> Visit Joy of Jyotish
+                    </a>
                 </div>
             </div>
         </div>
@@ -554,9 +726,9 @@
         <div class="container">
             <div class="about-content">
                 <h2>About Amigo Academy</h2>
-                <p>Amigo Academy is an educational institution dedicated to providing specialized learning programs that combine academic excellence with practical skills. Our mission is to create accessible, high-quality education that empowers students to achieve their personal and professional goals.</p>
-                <p>With a foundation built on years of educational expertise, we have expanded to include both language training and psychology education divisions, each designed to meet specific learning needs while maintaining our core values of integrity, excellence, and student-centered teaching.</p>
-                <p>Our approach combines traditional teaching methods with innovative techniques, ensuring that every student receives personalized attention and support throughout their educational journey.</p>
+                <p>Amigo Academy is an educational institution dedicated to providing specialized learning programs that combine academic excellence with practical skills and spiritual wisdom. Our mission is to create accessible, high-quality education that empowers students to achieve holistic growth.</p>
+                <p>With a foundation built on years of educational expertise, we have expanded to include language training, psychology education, and Vedic Jyotish divisions, each designed to meet specific learning needs while maintaining our core values of integrity, excellence, and student-centered teaching.</p>
+                <p>Our unique approach combines traditional teaching methods with innovative techniques and ancient wisdom, ensuring that every student receives personalized attention and support throughout their educational journey.</p>
             </div>
         </div>
     </section>
@@ -599,12 +771,11 @@
                 <div class="cofounder-tags">
                     <span class="cofounder-tag">Psychologist</span>
                     <span class="cofounder-tag">GSET Qualified</span>
-                    <span class="cofounder-tag">Disability Advocate</span>
                     <span class="cofounder-tag">Educator</span>
                 </div>
                 
                 <div class="cofounder-quote">
-                    "I'm a psychologist with a passion for integrating modern psychology with educational practices. As someone living with spastic diplegic cerebral palsy, my journey has taught me resilience and the importance of creating inclusive learning environments. My work emphasizes mental health awareness, disability rights, and accessible education for all."
+                    "I'm a psychologist with a passion for integrating modern psychology with educational practices and ancient Vedic wisdom. As someone living with spastic diplegic cerebral palsy, my journey has taught me resilience and the importance of creating inclusive learning environments. My work emphasizes mental health awareness, disability rights, accessible education"
                 </div>
                 
                 <div>
@@ -617,6 +788,10 @@
                         <div class="project-card">
                             <h4>RPWD16 Resource Hub</h4>
                             <p>Digital platform dedicated to the Rights of Persons with Disabilities Act, 2016, providing legal rights information and resources.</p>
+                        </div>
+                        <div class="project-card">
+                            <h4>Joy of Jyotish</h4>
+                            <p>Educational platform for contemplative study of Vedic astrology, focusing on self-discovery and psychological integration.</p>
                         </div>
                     </div>
                 </div>
@@ -644,15 +819,15 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2>Begin Your Educational Journey</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.2rem;">Choose the program that aligns with your learning goals and take the first step toward your academic and professional development.</p>
+            <h2>Begin Your Holistic Educational Journey</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.2rem;">Choose the program that aligns with your learning goals and take the first step toward your academic, professional, and personal development.</p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p style="opacity: 0.8;">© 2025 Amigo Academy</p>
-            <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 0.5rem;">Committed to Educational Excellence</p>
+            <p style="opacity: 0.8;">© 2026 Amigo Academy</p>
+            <p style="opacity: 0.6; font-size: 0.9rem; margin-top: 0.5rem;">Committed to Holistic Educational Excellence</p>
         </div>
     </footer>
 
