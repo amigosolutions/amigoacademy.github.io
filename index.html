@@ -414,13 +414,22 @@
             color: var(--gold-primary);
         }
 
-        .leadership-card {
-            max-width: 800px;
+        /* New: cards wrapper so two cards sit side-by-side */
+        .leadership-cards {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .leadership-card {
+            flex: 1;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
             padding: 3rem;
             border: 1px solid rgba(244, 196, 48, 0.2);
+            box-shadow: var(--shadow);
         }
 
         .cofounder-avatar {
@@ -483,7 +492,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1.5rem;
             margin: 2.5rem 0;
         }
@@ -593,6 +602,7 @@
             .cofounder-name { font-size: 2rem; }
             .about-content h2, .leadership-section h2, .cta-section h2 { font-size: 2.5rem; }
             .jyotish-logo { font-size: 2.8rem; }
+            .leadership-cards { flex-direction: column; }
         }
 
         @media (max-width: 480px) {
@@ -706,7 +716,7 @@
                 <h2 class="jyotish-title">Vedic Insights</h2>
                 <div class="jyotish-content">
                     <p>Discover Vedic Jyotish – the ancient science of light – through <strong>Joy of Jyotish</strong>.</p>
-                    <p>This dedicated platform offers contemplative resources for beginners, revealing the inner language of soul, destiny, and self-understanding through timeless Vedic wisdom. Explore how planetary patterns can illuminate your personal journey and psychological makeup.</p>
+                    <p>This dedicated platform offers contemplative resources for beginners, revealing the inner language of soul, destiny, and self-understanding through timeless Vedic wisdom. Explor[...]</p>
                     <p>At Amigo Academy, we integrate this ancient knowledge with modern psychology to provide a holistic approach to self-discovery and personal growth.</p>
                     
                     <div class="jyotish-disclaimer">
@@ -726,9 +736,9 @@
         <div class="container">
             <div class="about-content">
                 <h2>About Amigo Academy</h2>
-                <p>Amigo Academy is an educational institution dedicated to providing specialized learning programs that combine academic excellence with practical skills and spiritual wisdom. Our mission is to create accessible, high-quality education that empowers students to achieve holistic growth.</p>
-                <p>With a foundation built on years of educational expertise, we have expanded to include language training, psychology education, and Vedic Jyotish divisions, each designed to meet specific learning needs while maintaining our core values of integrity, excellence, and student-centered teaching.</p>
-                <p>Our unique approach combines traditional teaching methods with innovative techniques and ancient wisdom, ensuring that every student receives personalized attention and support throughout their educational journey.</p>
+                <p>Amigo Academy is an educational institution dedicated to providing specialized learning programs that combine academic excellence with practical skills and spiritual wisdom. Our mis[...]</p>
+                <p>With a foundation built on years of educational expertise, we have expanded to include language training, psychology education, and Vedic Jyotish divisions, each designed to meet sp[...]</p>
+                <p>Our unique approach combines traditional teaching methods with innovative techniques and ancient wisdom, ensuring that every student receives personalized attention and support thro[...]</p>
             </div>
         </div>
     </section>
@@ -760,57 +770,88 @@
         <div class="container">
             <h2>Our <span>Leadership</span></h2>
             
-            <div class="leadership-card">
-                <div class="cofounder-avatar">
-                    <i class="fas fa-user-graduate"></i>
-                </div>
-                
-                <div class="cofounder-name">Pranjal Vyas</div>
-                <div class="cofounder-title">Co-Founder</div>
-                
-                <div class="cofounder-tags">
-                    <span class="cofounder-tag">Psychologist</span>
-                    <span class="cofounder-tag">GSET Qualified</span>
-                    <span class="cofounder-tag">Educator</span>
-                </div>
-                
-                <div class="cofounder-quote">
-                    "I'm a psychologist with a passion for integrating modern psychology with educational practices and ancient Vedic wisdom. As someone living with spastic diplegic cerebral palsy, my journey has taught me resilience and the importance of creating inclusive learning environments. My work emphasizes mental health awareness, disability rights, accessible education"
-                </div>
-                
-                <div>
-                    <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; text-align: center;">Independent Projects & Initiatives</h3>
-                    <div class="projects-grid">
-                        <div class="project-card">
-                            <h4>Bindaas Bol</h4>
-                            <p>Safe-space dialogue platform promoting awareness about sexuality and reproductive health education in inclusive environments.</p>
-                        </div>
-                        <div class="project-card">
-                            <h4>RPWD16 Resource Hub</h4>
-                            <p>Digital platform dedicated to the Rights of Persons with Disabilities Act, 2016, providing legal rights information and resources.</p>
-                        </div>
-                        <div class="project-card">
-                            <h4>Joy of Jyotish</h4>
-                            <p>Educational platform for contemplative study of Vedic astrology, focusing on self-discovery and psychological integration.</p>
+            <div class="leadership-cards">
+                <!-- Ms. Gauri -->
+                <div class="leadership-card">
+                    <div class="cofounder-avatar" style="background: linear-gradient(135deg, #7B2CBF, #2C5282);">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+
+                    <div class="cofounder-name">Ms. Gauri</div>
+                    <div class="cofounder-title">Founder | Educator | Architect & Linguist</div>
+
+                    <div class="cofounder-quote">
+                        "I am an architect and educator who designs learning experiences the way one designs a sanctuary—with intention, foundation, and care for the human spirit within. My 15+ years of teaching are informed by my architectural training from the University of Arizona and University of Valencia, where I learned that the strongest structures are built on empathy and true understanding. I create emotionally safe, student-centered environments where knowledge and personal growth are constructed together."
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; text-align: center;">Independent Projects & Initiatives</h3>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <h4>Linguistic Foundations</h4>
+                                <p>A specialized approach to language education that builds communication skills from the ground up, focusing on core grammar as a load-bearing structure and vocabulary as the essential finish, enabling authentic expression.</p>
+                            </div>
+                            <div class="project-card">
+                                <h4>Joy of Jyotish</h4>
+                                <p>An educational platform for the contemplative study of Vedic astrology, framing it as a tool for self-discovery and psychological insight—an architecture of the self, mapped through celestial symbolism.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="achievements">
-                    <div class="achievement-item">
-                        <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
-                        <div>Young Achiever Award</div>
-                        <small>For community contributions</small>
+
+                <!-- Pranjal Vyas -->
+                <div class="leadership-card">
+                    <div class="cofounder-avatar">
+                        <i class="fas fa-user-graduate"></i>
                     </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon"><i class="fas fa-star"></i></div>
-                        <div>Lok Jagruti Kendra Award</div>
-                        <small>Disability rights advocacy</small>
+                    
+                    <div class="cofounder-name">Pranjal Vyas</div>
+                    <div class="cofounder-title">Co-Founder</div>
+                    
+                    <div class="cofounder-tags">
+                        <span class="cofounder-tag">Psychologist</span>
+                        <span class="cofounder-tag">GSET Qualified</span>
+                        <span class="cofounder-tag">Educator</span>
                     </div>
-                    <div class="achievement-item">
-                        <div class="achievement-icon"><i class="fas fa-award"></i></div>
-                        <div>Global Guardian Angel Award</div>
-                        <small>Mental health awareness</small>
+                    
+                    <div class="cofounder-quote">
+                        "I'm a psychologist with a passion for integrating modern psychology with educational practices and ancient Vedic wisdom. As someone living with spastic diplegic cerebral palsy, my[...]"
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: var(--gold-primary); margin-bottom: 1.5rem; text-align: center;">Independent Projects & Initiatives</h3>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <h4>Bindaas Bol</h4>
+                                <p>Safe-space dialogue platform promoting awareness about sexuality and reproductive health education in inclusive environments.</p>
+                            </div>
+                            <div class="project-card">
+                                <h4>RPWD16 Resource Hub</h4>
+                                <p>Digital platform dedicated to the Rights of Persons with Disabilities Act, 2016, providing legal rights information and resources.</p>
+                            </div>
+                            <div class="project-card">
+                                <h4>Joy of Jyotish</h4>
+                                <p>Educational platform for contemplative study of Vedic astrology, focusing on self-discovery and psychological integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="achievements">
+                        <div class="achievement-item">
+                            <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                            <div>Young Achiever Award</div>
+                            <small>For community contributions</small>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon"><i class="fas fa-star"></i></div>
+                            <div>Lok Jagruti Kendra Award</div>
+                            <small>Disability rights advocacy</small>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-icon"><i class="fas fa-award"></i></div>
+                            <div>Global Guardian Angel Award</div>
+                            <small>Mental health awareness</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -820,7 +861,7 @@
     <section class="cta-section">
         <div class="container">
             <h2>Begin Your Holistic Educational Journey</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.2rem;">Choose the program that aligns with your learning goals and take the first step toward your academic, professional, and personal development.</p>
+            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.2rem;">Choose the program that aligns with your learning goals and take the first step toward your academic, professional, and[...]</p>
         </div>
     </section>
 
